@@ -1,0 +1,13 @@
+<%= form_tag('/open_url') do -%>
+  <div><%= submit_tag 'Save' %></div>
+  <%= text_field_tag :url %>
+<% end -%>
+
+<div class="nice">
+ res_body: <%= @res_body %>
+</div>
+
+<iframe id="myframe"></iframe>
+
+<script>
+</script>
