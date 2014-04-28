@@ -1,9 +1,11 @@
+<%= @res_body %>
 <script>
   var content = "<html><body><b>Hello World!</b></body></html>";
+  // note <script> tag in @res_body can cause error here
 
   var iframe = document.createElement("iframe");
       document.body.appendChild(iframe);
-      iframe.id = 'mynewframe';
+      iframe.id = 'myframe';
 
   var frameDoc = iframe.document;
       if(iframe.contentWindow)
