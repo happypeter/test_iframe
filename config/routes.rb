@@ -1,6 +1,7 @@
 TestBs::Application.routes.draw do
   get "welcome/index"
   post "open_url" => "welcome#open_url"
+  get "/page"=> "welcome#page"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

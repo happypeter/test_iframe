@@ -13,4 +13,9 @@ class WelcomeController < ApplicationController
     }
     @res_body =  res.body
   end
+
+  def page
+    @body = "<h1>hello</h2>" + '<button onclick="TogetherJS(this); return false;">Start TogetherJS</button> ' +
+    '<script src="https://togetherjs.com/togetherjs-min.js"></script>'
+  end
 end
