@@ -15,7 +15,16 @@ class WelcomeController < ApplicationController
   end
 
   def page
-    @body = "<h1>hello</h2>" + '<button onclick="TogetherJS(this); return false;">Start TogetherJS</button> ' +
+    url = URI.parse("http://happycasts.net/")
+    # if you do not have the trailing / , the url.path will be empty, error
+    # occur
+    req = Net::HTTP::Get.new(url.path)
+    # baidu.com cause error here
+    res = Net::HTTP.start(url.host, url.port) {|http|
+      http.request(req)
+    }
+    @res_body =  res.body
+    @body = @res_body + '<button onclick="TogetherJS(this); return false;">Start TogetherJS</button> ' +
     '<script src="https://togetherjs.com/togetherjs-min.js"></script>'
   end
 end
