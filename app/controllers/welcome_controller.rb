@@ -7,10 +7,10 @@ class WelcomeController < ApplicationController
 
     url = URI.parse(params[:url])
     req = Net::HTTP::Get.new(url.path)
+    # baidu.com cause error here
     res = Net::HTTP.start(url.host, url.port) {|http|
       http.request(req)
     }
     @res_body =  res.body
-    render :index
   end
 end
