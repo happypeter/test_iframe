@@ -15,7 +15,7 @@ class WelcomeController < ApplicationController
   end
 
   def page
-    url = URI.parse("http://happycasts.net/")
+    url = URI.parse("http://www.baidu.com/")
     # if you do not have the trailing / , the url.path will be empty, error
     # occur
     req = Net::HTTP::Get.new(url.path)
